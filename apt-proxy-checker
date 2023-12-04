@@ -1,0 +1,15 @@
+#!/bin/bash
+# Checks if proxy is available for apt
+# If yes, prints <addr>:<port>, otherwise prints DIRECT.
+# Use it in /etc/apt/apt.conf.d/80proxy by
+# Acquire::http::ProxyAutoDetect "/usr/local/bin/apt-proxy-checker";
+
+ADDR=""
+PORT=""
+
+if nc -w1 -z $ADDR $PORT 2>/dev/null; then
+  echo $ADDR:$PORT
+else
+  echo "DIRECT"
+fi
+
