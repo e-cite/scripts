@@ -2,7 +2,7 @@
 # Checks if proxy is available for apt
 # If yes, prints <addr>:<port>, otherwise prints DIRECT.
 # Use it in /etc/apt/apt.conf.d/80proxy by
-# Acquire::http::ProxyAutoDetect "/usr/local/bin/apt-proxy-checker";
+# Acquire::http::Proxy-Auto-Detect "/usr/local/bin/apt-proxy-checker";
 
 ADDR=""
 PORT=""
